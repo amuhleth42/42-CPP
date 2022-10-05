@@ -6,15 +6,15 @@
 #    By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 23:07:44 by amuhleth          #+#    #+#              #
-#    Updated: 2022/10/05 16:59:48 by amuhleth         ###   ########.fr        #
+#    Updated: 2022/10/05 17:01:05 by amuhleth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= megaphone
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS		= main.cpp
+SRCS		= megaphone.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 
