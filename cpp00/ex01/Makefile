@@ -6,7 +6,7 @@
 #    By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 17:26:25 by amuhleth          #+#    #+#              #
-#    Updated: 2022/10/05 17:28:51 by amuhleth         ###   ########.fr        #
+#    Updated: 2022/10/10 21:25:52 by amuhleth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME		= phonebook
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS		= 
+SRCS		= main.cpp		\
+			  PhoneBook.cpp	\
+			  Contact.cpp	\
 
 OBJS		= $(SRCS:.cpp=.o)
 

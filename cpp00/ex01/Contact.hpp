@@ -6,21 +6,29 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:32:11 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/05 17:36:38 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:33:38 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <string>
+
 class Contact {
 
-public:
+private:
 
 	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;
 	std::string	darkest_secret;
+
+public:
+
+	Contact(void);
+	~Contact(void);
+	void	set_data(void);
 };
 
 #endif
