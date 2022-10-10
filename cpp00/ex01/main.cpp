@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:35:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/10 21:43:17 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:19:25 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	main(void)
 	PhoneBook	book;
 	std::string	input;
 
-	std::cout << "$ ";
+	std::cout << "PHONEBOOK $ ";
 	std::getline(std::cin, input);
 	while (input != "EXIT")
 	{
 		if (input == "ADD")
 			book.add();
-		/*else if (input == "SEARCH")
-			book.search();*/
-		std::cout << "$ ";
+		else if (input == "SEARCH")
+			book.search();
+		std::cout << "PHONEBOOK $ ";
 		std::getline(std::cin, input);
 	}
 	std::cout << "Adios!" << std::endl;
