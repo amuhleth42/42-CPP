@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 14:10:55 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/12 14:40:52 by amuhleth         ###   ########.fr       */
+/*   Created: 2022/10/12 14:16:21 by amuhleth          #+#    #+#             */
+/*   Updated: 2022/10/12 14:45:24 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
 #include "Weapon.hpp"
 
-Weapon::Weapon( void )
-{
-}
+class HumanA {
 
-Weapon::Weapon( std::string type ) : _type(type)
-{
-}
+public:
 
-Weapon::~Weapon( void )
-{
-}
+	HumanA( Weapon &weapon );
+	HumanA( std::string name, Weapon &weapon );
+	~HumanA( void );
+	void	setName( std::string name );
+	void	attack( void ) const;
 
-std::string&	Weapon::getType( void )
-{
-	std::string	&ref = this->_type;
-	return (ref);
-}
+private:
 
-void	Weapon::setType( std::string type )
-{
-	this->_type = type;
-}
+	std::string	_name;
+	Weapon&		_weapon;
+};
+#endif
