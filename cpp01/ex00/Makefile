@@ -6,7 +6,7 @@
 #    By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 17:26:25 by amuhleth          #+#    #+#              #
-#    Updated: 2022/10/12 00:38:45 by amuhleth         ###   ########.fr        #
+#    Updated: 2022/10/12 13:28:23 by amuhleth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME		= zombie
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS		= main.cpp		\
+SRCS		= main.cpp			\
+			  Zombie.cpp		\
+			  newZombie.cpp		\
+			  randomChump.cpp	\
 
 OBJS		= $(SRCS:.cpp=.o)
 
