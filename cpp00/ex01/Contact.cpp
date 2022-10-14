@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:22:59 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/14 13:12:30 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:49:24 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,31 @@ Contact::~Contact(void)
 
 void	Contact::set_data(void)
 {
-	std::cout << "Please enter your First Name" << std::endl;
-	std::getline(std::cin, this->_first_name);
-	std::cout << "Please enter your Last Name" << std::endl;
-	std::getline(std::cin, this->_last_name);
-	std::cout << "Please enter your Nickname" << std::endl;
-	std::getline(std::cin, this->_nickname);
-	std::cout << "Please enter your Phone Number" << std::endl;
-	std::getline(std::cin, this->_phone_number);
-	std::cout << "Please enter your Darkest Secret" << std::endl;
-	std::getline(std::cin, this->_darkest_secret);
+	while (this->_first_name.empty())
+	{
+		std::cout << "Please enter your First Name" << std::endl;
+		std::getline(std::cin, this->_first_name);
+	}
+	while (this->_last_name.empty())
+	{
+		std::cout << "Please enter your Last Name" << std::endl;
+		std::getline(std::cin, this->_last_name);
+	}
+	while (this->_nickname.empty())
+	{
+		std::cout << "Please enter your Nickname" << std::endl;
+		std::getline(std::cin, this->_nickname);
+	}
+	while (this->_phone_number.empty())
+	{
+		std::cout << "Please enter your Phone Number" << std::endl;
+		std::getline(std::cin, this->_phone_number);
+	}
+	while (this->_darkest_secret.empty())
+	{
+		std::cout << "Please enter your Darkest Secret" << std::endl;
+		std::getline(std::cin, this->_darkest_secret);
+	}
 }
 
 void	Contact::show_columns(void)
@@ -57,4 +72,18 @@ void	Contact::show_columns(void)
 	else
 		std::cout << std::setw(10) << this->_nickname;
 	std::cout << "|" << std::endl;
+}
+
+void	Contact::show_contact(void)
+{
+	if (this->_first_name.empty())
+	{
+		std::cout << "[ Invalid index ]" << std::endl;
+		return ;
+	}
+	std::cout << "First Name: " << this->_first_name << std::endl;
+	std::cout << "Last Name: " << this->_last_name << std::endl;
+	std::cout << "Nickname: " << this->_nickname << std::endl;
+	std::cout << "Phone Number: " << this->_phone_number << std::endl;
+	std::cout << "Darkest Secret: " << this->_darkest_secret << std::endl;
 }

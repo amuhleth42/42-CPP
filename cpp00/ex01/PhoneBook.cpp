@@ -6,12 +6,11 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:15:29 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/14 13:14:19 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:51:31 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
 
 PhoneBook::PhoneBook(void)
 {
@@ -33,7 +32,7 @@ void	PhoneBook::add(void)
 void	PhoneBook::search(void)
 {
 	if (this->_nb_added == 0)
-		std::cout << "Please ADD a contact before searching." << std::endl;
+		std::cout << "[ Please ADD a contact before searching. ]" << std::endl;
 	else
 	{
 		std::cout << "---------------------------------------------" << std::endl;
@@ -41,12 +40,18 @@ void	PhoneBook::search(void)
 		std::cout << "---------------------------------------------" << std::endl;
 		for (int i = 0 ; i < this->_nb_added && i < 8 ; i++)
 		{
-			std::cout << "|         " << i << "|";
+			std::cout << "|         " << i + 1 << "|";
 			this->_tab[i].show_columns();
 		}
 		std::cout << "---------------------------------------------" << std::endl;
 		std::cout << "Please enter the index of a contact to display its data: ";
 		std::string	input;
 		std::getline(std::cin, input);
+		int	n;
+		std::stringstream(input) >> n;
+		if (1 <= n && n <= 8)
+			this->_tab[n - 1].show_contact();
+		else
+			std::cout << "[ Invalid index ]" << std::endl;
 	}
 }

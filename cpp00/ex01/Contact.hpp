@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:32:11 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/14 13:11:40 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:38:24 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <string>
+# include <iostream>
 
 class Contact {
 
@@ -23,6 +24,7 @@ public:
 	~Contact(void);
 	void	set_data(void);
 	void	show_columns(void);
+	void	show_contact(void);
 
 private:
 
