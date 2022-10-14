@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:18:34 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/14 12:58:52 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:21:37 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,10 @@ void	Harl::complain_filter( std::string level )
 	{
 		case 0:
 			(this->*f[0])();
-			(this->*f[1])();
-			(this->*f[2])();
-			(this->*f[3])();
-			break ;
 		case 1:
 			(this->*f[1])();
-			(this->*f[2])();
-			(this->*f[3])();
-			break ;
 		case 2:
 			(this->*f[2])();
-			(this->*f[3])();
-			break ;
 		case 3:
 			(this->*f[3])();
 			break ;
