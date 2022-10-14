@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:28:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/12 18:30:07 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 12:31:41 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,10 @@ int	main(void)
 	Harl	harl;
 
 	harl.complain("debug");
+	harl.complain("info");
+	harl.complain("warning");
+	harl.complain("error");
+
+	harl.complain("errorf");
+	harl.complain("");
 }
