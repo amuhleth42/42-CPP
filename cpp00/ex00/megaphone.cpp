@@ -6,13 +6,12 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:01:17 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/05 17:24:21 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:04:05 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <locale>
 
 int	main(int argc, char **argv)
 {

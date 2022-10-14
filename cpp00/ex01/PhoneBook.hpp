@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:29:47 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/10 21:40:32 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:07:39 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 
 class PhoneBook {
 
-private:
-
-	Contact	tab[8];
-	int	nb_added;
-
 public:
 
 	PhoneBook(void);
@@ -29,6 +24,12 @@ public:
 
 	void	add(void);
 	void	search(void);
+
+private:
+
+	Contact	_tab[8];
+	int		_nb_added;
+
 };
 
 #endif
