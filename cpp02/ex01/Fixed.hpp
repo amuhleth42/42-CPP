@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:06:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/19 00:57:59 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/19 01:53:30 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ private:
 	int					_value;
 	static int const	_point_position = 8;
 };
+
+std::ostream&	operator<<(std::ostream& o, Fixed const & n);
 
 #endif
