@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:06:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/19 00:17:59 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/19 00:57:59 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,18 @@ class Fixed {
 public:
 
 	Fixed( void );
-	Fixed( Fixed &src );
+	Fixed( const Fixed& src );
+	Fixed( int const n );
+	Fixed( float const n );
 	~Fixed( void );
 
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );
 
-	Fixed	&operator=(Fixed &rhs);
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
+
+	Fixed&	operator=(const Fixed& rhs);
 
 private:
 
