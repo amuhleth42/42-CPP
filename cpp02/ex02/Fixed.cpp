@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/19 02:24:22 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:14:23 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ Fixed	&Fixed::operator=(const Fixed& rhs)
 	return (*this);
 }
 
+//	Arithmethic
+
 Fixed	Fixed::operator+(Fixed const & rhs) const
 {
 	Fixed result;
@@ -102,7 +104,12 @@ Fixed	Fixed::operator*(Fixed const & rhs) const
 	return (result);
 }
 
+//	Comparison
 
+
+//	-crementation
+
+//	Stream
 
 std::ostream&	operator<<(std::ostream &o, Fixed const &n)
 {
