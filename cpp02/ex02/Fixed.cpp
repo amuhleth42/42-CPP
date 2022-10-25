@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 16:57:58 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:09:13 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,38 @@ Fixed	Fixed::operator/(Fixed const & rhs) const
 	result.setRawBits((this->getRawBits() << this->_point_position) / rhs.getRawBits());
 	return (result);
 }
+
 //	Comparison
 
+bool	Fixed::operator==(Fixed const & rhs) const
+{
+	return (this->toInt() == rhs.toInt());
+}
+
+bool	Fixed::operator!=(Fixed const & rhs) const
+{
+	return (this->toInt() != rhs.toInt());
+}
+
+bool	Fixed::operator<(Fixed const & rhs) const
+{
+	return (this->toInt() < rhs.toInt());
+}
+
+bool	Fixed::operator<=(Fixed const & rhs) const
+{
+	return (this->toInt() <= rhs.toInt());
+}
+
+bool	Fixed::operator>(Fixed const & rhs) const
+{
+	return (this->toInt() > rhs.toInt());
+}
+
+bool	Fixed::operator>=(Fixed const & rhs) const
+{
+	return (this->toInt() >= rhs.toInt());
+}
 
 //	-crementation
 

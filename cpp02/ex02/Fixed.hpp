@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:06:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/19 02:10:51 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:09:39 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ public:
 	Fixed	operator-(Fixed const & rhs) const;
 	Fixed	operator*(Fixed const & rhs) const;
 	Fixed	operator/(Fixed const & rhs) const;
+
+	bool	operator==(Fixed const & rhs) const;
+	bool	operator!=(Fixed const & rhs) const;
+	bool	operator<(Fixed const & rhs) const;
+	bool	operator<=(Fixed const & rhs) const;
+	bool	operator>(Fixed const & rhs) const;
+	bool	operator>=(Fixed const & rhs) const;
 
 
 
