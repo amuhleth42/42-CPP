@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 17:09:13 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:39:48 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,37 @@
 Fixed::Fixed( void )
 {
 	this->_value = 0;
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed& src )
 {
 	*this = src;
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed( int const n )
 {
 	this->_value = (n << 8);
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( float const n )
 {
 	this->_value = (int)roundf(n * (1 << this->_point_position));
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 // Accessors
 
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
@@ -74,7 +74,7 @@ int	Fixed::toInt( void ) const
 Fixed	&Fixed::operator=(const Fixed& rhs)
 {
 	this->_value = rhs.getRawBits();
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
@@ -145,6 +145,34 @@ bool	Fixed::operator>=(Fixed const & rhs) const
 }
 
 //	-crementation
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	result(*this);
+
+	this->_value++;
+	return (result);
+}
+
+Fixed	Fixed::operator++(void)
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	result(*this);
+
+	this->_value--;
+	return (result);
+}
+
+Fixed	Fixed::operator--(void)
+{
+	this->_value--;
+	return (*this);
+}
 
 //	Stream
 
