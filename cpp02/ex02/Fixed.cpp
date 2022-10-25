@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 15:14:23 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:57:58 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,17 @@ Fixed	Fixed::operator*(Fixed const & rhs) const
 {
 	Fixed result;
 
-	result.setRawBits(this->getRawBits() * rhs.getRawBits() / (1 << this->_point_position));
+	result.setRawBits((this->getRawBits() * rhs.getRawBits()) >> this->_point_position);
 	return (result);
 }
 
+Fixed	Fixed::operator/(Fixed const & rhs) const
+{
+	Fixed result;
+
+	result.setRawBits((this->getRawBits() << this->_point_position) / rhs.getRawBits());
+	return (result);
+}
 //	Comparison
 
 
