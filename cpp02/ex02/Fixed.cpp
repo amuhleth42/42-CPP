@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 17:39:48 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:00:48 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,28 @@ int	Fixed::toInt( void ) const
 {
 	return (this->_value >> 8);
 }
+/*
+static Fixed	Fixed::min(Fixed & r1, Fixed & r2)
+{
+}
 
-// Operator overloads
+static Fixed	Fixed::min(Fixed const & r1, Fixed const & r2)
+{
+}
+
+static Fixed	Fixed::max(Fixed & r1, Fixed & r2)
+{
+}
+
+static Fixed	Fixed::max(Fixed & r1, Fixed & r2)
+{
+}
+
+static Fixed::min(Fixed & r1, Fixed & r2)
+{
+}*/
+
+/*************      OPERATOR OVERLOADS           ************/
 
 Fixed	&Fixed::operator=(const Fixed& rhs)
 {
@@ -154,7 +174,7 @@ Fixed	Fixed::operator++(int)
 	return (result);
 }
 
-Fixed	Fixed::operator++(void)
+Fixed	&Fixed::operator++(void)
 {
 	this->_value++;
 	return (*this);
@@ -168,7 +188,7 @@ Fixed	Fixed::operator--(int)
 	return (result);
 }
 
-Fixed	Fixed::operator--(void)
+Fixed	&Fixed::operator--(void)
 {
 	this->_value--;
 	return (*this);
