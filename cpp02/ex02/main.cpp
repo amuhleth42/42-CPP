@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:13:24 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 17:36:50 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:49:26 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int main( void )
 	std::cout << "a++: " << a++ << std::endl;
 	std::cout << "a: " << a << std::endl;
 	std::cout << "b: " << b << std::endl;
-	//std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }

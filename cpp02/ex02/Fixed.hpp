@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:06:20 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 17:58:10 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:49:06 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ public:
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
 
-	static Fixed	min(Fixed & r1, Fixed & r2);
+	static Fixed	&min(Fixed & r1, Fixed & r2);
 	static Fixed	min(Fixed const & r1, Fixed const & r2);
-	static Fixed	max(Fixed & r1, Fixed & r2);
+	static Fixed	&max(Fixed & r1, Fixed & r2);
 	static Fixed	max(Fixed const & r1, Fixed const & r2);
 
 	Fixed&	operator=(Fixed const & rhs);

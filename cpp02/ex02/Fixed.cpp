@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:14:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 18:00:48 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:49:01 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,26 +68,45 @@ int	Fixed::toInt( void ) const
 {
 	return (this->_value >> 8);
 }
-/*
-static Fixed	Fixed::min(Fixed & r1, Fixed & r2)
+
+Fixed	&Fixed::min(Fixed & r1, Fixed & r2)
 {
+	if (r1 <= r2 )
+		return (r1);
+	else
+		return (r2);
 }
 
-static Fixed	Fixed::min(Fixed const & r1, Fixed const & r2)
+Fixed	Fixed::min(Fixed const & r1, Fixed const & r2)
 {
+	Fixed	res;
+
+	if (r1 <= r2 )
+		res.setRawBits(r1.getRawBits());
+	else
+		res.setRawBits(r2.getRawBits());
+	return (res);
 }
 
-static Fixed	Fixed::max(Fixed & r1, Fixed & r2)
+Fixed	&Fixed::max(Fixed & r1, Fixed & r2)
 {
+	if (r1 >= r2 )
+		return (r1);
+	else
+		return (r2);
 }
 
-static Fixed	Fixed::max(Fixed & r1, Fixed & r2)
+Fixed	Fixed::max(Fixed const & r1, Fixed const & r2)
 {
+	Fixed	res;
+
+	if (r1 >= r2 )
+		res.setRawBits(r1.getRawBits());
+	else
+		res.setRawBits(r2.getRawBits());
+	return (res);
 }
 
-static Fixed::min(Fixed & r1, Fixed & r2)
-{
-}*/
 
 /*************      OPERATOR OVERLOADS           ************/
 
