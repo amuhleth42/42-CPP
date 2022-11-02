@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:52:37 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 18:57:44 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:44:05 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Point( Point const & src );
 	~Point( void );
 
-	Fixed&	operator=(Fixed const & rhs);
+	Point&	operator=(Point const & rhs);
 
 	Fixed	getX( void ) const;
 	Fixed	getY( void ) const;
@@ -42,6 +42,6 @@ std::ostream	&operator<<( std::ostream &out, Point const & point );
 
 
 Fixed	triangle_area( Point const p1, Point const p2, Point const p3 );
-bool	bcp( Point const a, Point const b, Point const c, Point const point );
+bool	bsp( Point const a, Point const b, Point const c, Point const point );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:57:28 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/10/25 19:02:07 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:47:38 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ Point::Point( Point const & src )
 
 Point::~Point( void )
 {
+}
+
+Point&	Point::operator=(Point const & rhs)
+{
+	this->_x = rhs.getX();
+	this->_y = rhs.getY();
+	return (*this);
 }
 
 Fixed	Point::getX( void ) const
