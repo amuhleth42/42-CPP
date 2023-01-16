@@ -14,6 +14,7 @@
 # define CLAP_TRAP
 
 # include <string>
+# include <iostream>
 
 class	ClapTrap {
 

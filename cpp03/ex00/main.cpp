@@ -14,5 +14,13 @@
 
 int	main(void)
 {
+	ClapTrap	a("Karl");
+	ClapTrap	b("Egon");
+	ClapTrap	c(a);
+
+	c.attack("Pop-Hip de Stupeflip");
+	c.beRepaired(2);
+	c.takeDamage(6);
+
 	return (0);
 }

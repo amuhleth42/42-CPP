@@ -12,18 +12,26 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const & name) : _name(name)
+
+//	Constructors
+
+ClapTrap::ClapTrap(std::string const & name) : _name(name), _hp(10), _ep(10), _attackDamage(0)
 {
+	std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap & src)
 {
 	*this = src;
+	std::cout << "ClapTrap " << this->_name << " has been created as a copy" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
+	std::cout << "ClapTrap " << this->_name << " has been destroyed !" << std::endl;
 }
+
+//	Accessors
 
 std::string	ClapTrap::getName(void) const
 {
@@ -44,6 +52,38 @@ int	ClapTrap::getAttackDamage(void) const
 {
 	return (this->_attackDamage);
 }
+
+void	ClapTrap::attack(std::string const & target)
+{
+	if (this->_hp > 0 && this->_ep > 0)
+	{
+		std::cout << "ClapTrap " << this->_name << " attacks "
+			<< target << ", causing " << this->_attackDamage
+			<< " points of damage !" << std::endl;
+		this->_ep--;
+	}
+}
+
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	this->_hp -= amount;
+	if (this->_hp < 0)
+		this->_hp = 0;
+	std::cout << "Ouch! ClapTrap " << this->_name << " as taken " << amount << " damage points !" << std::endl;
+}
+
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->_hp > 0 && this->_ep > 0)
+	{
+		this->_hp += amount;
+		std::cout << "ClapTrap " << this->_name << " has been repaired and gained "
+			<< amount << " hit points !" << std::endl;
+		this->_ep--;
+	}
+}
+
+
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs)
 {
