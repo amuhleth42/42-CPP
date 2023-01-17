@@ -13,9 +13,10 @@ public:
 	~ScavTrap(void);
 
 	void	guardGate(void);
+	void	attack(std::string const & target);
 
 	ScavTrap&	operator=(ScavTrap const & rhs);
-		
+
 
 private:
 

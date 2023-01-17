@@ -11,23 +11,26 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap	a("Karl");
-	ClapTrap	b("Egon");
-	ClapTrap	c(a);
-	ClapTrap	d;
+	ClapTrap	c("Karl");
+	ScavTrap	s("John");
+	ScavTrap	cpy(s);
+	ClapTrap	magic(s);
+
+	std::cout << std::endl;
+
 
 	c.attack("Pop-Hip de Stupeflip");
-	c.beRepaired(2);
-	c.takeDamage(6);
-	c.beRepaired(2);
-	c.takeDamage(8);
 
-	c.attack("King Ju");
-	c.beRepaired(2);
-	c.takeDamage(8);
+	s.attack("King Ju");
+	s.guardGate();
+	s.beRepaired(2);
+	s.takeDamage(8);
+
+	std::cout << std::endl;
 
 	return (0);
 }
