@@ -62,14 +62,23 @@ void	ClapTrap::attack(std::string const & target)
 			<< " points of damage !" << std::endl;
 		this->_ep--;
 	}
+	else if (this->_hp > 0)
+		std::cout << "No more EP left ! " << this->_name << " cannot attack !" << std::endl;
+	else
+		std::cout << this->_name << " is dead... :(" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	this->_hp -= amount;
-	if (this->_hp < 0)
-		this->_hp = 0;
-	std::cout << "Ouch! ClapTrap " << this->_name << " as taken " << amount << " damage points !" << std::endl;
+	if (this->_hp > 0)
+	{
+		std::cout << "Ouch! ClapTrap " << this->_name << " as taken " << amount << " damage points !" << std::endl;
+		this->_hp -= amount;
+		if (this->_hp <= 0)
+			std::cout << "ClapTrap " << this->_name << " has died... :(" << std::endl;
+	}
+	else
+		std::cout << "Please don't hurt corpses... C'est pas tres Charlie." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -81,6 +90,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			<< amount << " hit points !" << std::endl;
 		this->_ep--;
 	}
+	else if (this->_hp > 0)
+		std::cout << "No more EP left ! " << this->_name << " cannot be repaired !" << std::endl;
+	else
+		std::cout << this->_name << " is dead... :(" << std::endl;
 }
 
 
