@@ -4,6 +4,7 @@
 
 ScavTrap::ScavTrap(void)
 {
+	this->_name = "Default";
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_attackDamage = 20;

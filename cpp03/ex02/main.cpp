@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
 	ClapTrap	c("Karl");
-	ScavTrap	s("John");
-	ScavTrap	def;
-	ScavTrap	cpy(s);
+	FragTrap	s("John");
+	FragTrap	def;
+	FragTrap	cpy(s);
 	ClapTrap	magic(s);
 
 	std::cout << std::endl;
@@ -27,7 +27,7 @@ int	main(void)
 	c.attack("Pop-Hip de Stupeflip");
 
 	s.attack("King Ju");
-	s.guardGate();
+	s.highFivesGuys();
 	s.beRepaired(2);
 	s.takeDamage(8);
 
