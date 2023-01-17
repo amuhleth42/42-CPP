@@ -36,7 +36,7 @@ public:
 
 	ClapTrap	&operator=(ClapTrap const & rhs);
 
-private:
+protected:
 
 	std::string	_name;
 	int			_hp;
