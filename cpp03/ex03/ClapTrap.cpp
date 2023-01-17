@@ -17,12 +17,12 @@
 
 ClapTrap::ClapTrap(void) : _name("Default"), _hp(10), _ep(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has been created by default" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const & name) : _name(name), _hp(10), _ep(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has been created by string" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap & src)

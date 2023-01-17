@@ -8,7 +8,7 @@ ScavTrap::ScavTrap(void)
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap " << this->_name << " has been created" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " has been created by default" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
@@ -16,10 +16,10 @@ ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap " << this->_name << " has been created" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " has been created by string" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap& src) : ClapTrap(src._name)
+ScavTrap::ScavTrap(ScavTrap& src) : ClapTrap(src)
 {
 	*this = src;
 	std::cout << "ScavTrap " << this->_name << " has been created as a copy" << std::endl;
