@@ -2,14 +2,17 @@
 
 Animal::Animal(void) : type("Animal")
 {
+	std::cout << "Animal default constructor" << std::endl;
 }
 
 Animal::Animal(Animal const & src) : type(src.type)
 {
+	std::cout << "Animal copy constructor" << std::endl;
 }
 
 Animal::~Animal(void)
 {
+	std::cout << "Animal destructor" << std::endl;
 }
 
 std::string	Animal::getType(void) const
