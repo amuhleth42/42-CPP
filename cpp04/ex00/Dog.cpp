@@ -7,7 +7,7 @@ Dog::Dog(void)
 
 Dog::Dog(Dog const & src)
 {
-	this->type = src.type;
+	*this = src;
 }
 
 Dog::~Dog(void)
@@ -17,4 +17,10 @@ Dog::~Dog(void)
 void	Dog::makeSound(void) const
 {
 	std::cout << "Dog: Woof woof!" << std::endl;
+}
+
+Dog&	Dog::operator=(Dog const & rhs)
+{
+	Animal::operator=(rhs);
+	return (*this);
 }
