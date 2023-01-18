@@ -1,11 +1,13 @@
 #include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
+	std::cout << "Cure default constructor" << std::endl;
 }
 
 Cure::Cure(std::string const & type) : AMateria(type)
 {
+	std::cout << "Cure copy constructor" << std::endl;
 }
 
 Cure::~Cure(void)

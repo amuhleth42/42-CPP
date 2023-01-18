@@ -2,14 +2,17 @@
 
 Character::Character(void)
 {
+	std::cout << "Character default constructor" << std::endl;
 }
 
 Character::Character(std::string const & name) : _name(name)
 {
+	std::cout << "Character copy constructor" << std::endl;
 }
 
 Character::~Character(void)
 {
+	std::cout << "Character destructor" << std::endl;
 }
 
 std::string const &	Character::getName(void) const
@@ -19,15 +22,24 @@ std::string const &	Character::getName(void) const
 
 void	Character::equip(AMateria* m)
 {
-	if (m != NULL)
-		std::cout << "notnull" << std::endl;
-	std::cout << "yoo" << std::endl;
+	for (int i = 0 ; i < 4 ; i++)
+	{
+		if (this->_materias[i] == NULL)
+		{
+			//std::cout << "equiped! on " << i << "p:" << m << std::endl;
+			this->_materias[i] = m;
+			return ;
+		} 
+	}
 }
 
 void	Character::unequip(int idx)
 {
-	(void)idx;
-	std::cout << "yoo" << std::endl;
+	if (0 <= idx && idx < 4)
+	{
+		if (this->_materias[idx] != NULL)
+			this->_materias[idx] = NULL;
+	}
 }
 
 void	Character::use(int idx, ICharacter& target)
@@ -35,6 +47,9 @@ void	Character::use(int idx, ICharacter& target)
 	if (0 <= idx && idx < 4)
 	{
 		if (this->_materias[idx] != NULL)
+		{
+			//std::cout << "used!" << std::endl;
 			this->_materias[idx]->use(target);
+		}
 	}
 }
