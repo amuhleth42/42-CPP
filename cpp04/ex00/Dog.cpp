@@ -5,7 +5,7 @@ Dog::Dog(void)
 	this->type = "Dog";
 }
 
-Dog::Dog(Dog& src)
+Dog::Dog(Dog const & src)
 {
 	this->type = src.type;
 }

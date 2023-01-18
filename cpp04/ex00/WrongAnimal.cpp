@@ -4,7 +4,7 @@ WrongAnimal::WrongAnimal(void) : type("WrongAnimal")
 {
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal& src) : type(src.type)
+WrongAnimal::WrongAnimal(WrongAnimal const & src) : type(src.type)
 {
 }
 

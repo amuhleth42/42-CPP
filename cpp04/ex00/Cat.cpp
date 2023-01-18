@@ -5,7 +5,7 @@ Cat::Cat(void)
 	this->type = "Cat";
 }
 
-Cat::Cat(Cat& src)
+Cat::Cat(Cat const & src)
 {
 	this->type = src.type;
 }

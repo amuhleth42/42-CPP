@@ -4,7 +4,7 @@ Animal::Animal(void) : type("Animal")
 {
 }
 
-Animal::Animal(Animal& src) : type(src.type)
+Animal::Animal(Animal const & src) : type(src.type)
 {
 }
 

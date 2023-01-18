@@ -9,7 +9,7 @@ class	Animal {
 public:
 
 	Animal(void);
-	Animal(Animal& src);
+	Animal(Animal const & src);
 	virtual	~Animal(void);
 
 	std::string	getType(void) const;

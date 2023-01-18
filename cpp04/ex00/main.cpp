@@ -24,7 +24,7 @@ int main(void)
 	wcat->makeSound();
 	wmeta->makeSound();
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
 	delete meta;
 	delete j;

@@ -5,7 +5,7 @@ WrongCat::WrongCat(void)
 	this->type = "WrongCat";
 }
 
-WrongCat::WrongCat(WrongCat& src)
+WrongCat::WrongCat(WrongCat const & src)
 {
 	this->type = src.type;
 }

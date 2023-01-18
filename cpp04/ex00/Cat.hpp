@@ -8,7 +8,7 @@ class	Cat : public Animal {
 public:
 
 	Cat(void);
-	Cat(Cat& src);
+	Cat(Cat const & src);
 	~Cat(void);
 
 	void	makeSound(void) const;
