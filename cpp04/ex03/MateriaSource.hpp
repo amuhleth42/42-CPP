@@ -6,10 +6,16 @@
 class MateriaSource : public IMateriaSource {
 
 public:
-	virtual ~MateriaSource() {}
+	MateriaSource(void);
+	//MateriaSource(MateriaSource const & src);
+	virtual ~MateriaSource(void);
 	
-	virtual void		learnMateria(AMateria*);
+	virtual void		learnMateria(AMateria* p);
 	virtual AMateria*	createMateria(std::string const & type);
+
+private:
+
+	AMateria*	_tab[4];
 };
 
 

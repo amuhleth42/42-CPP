@@ -18,6 +18,7 @@ SRCS		= AMateria.cpp		\
 			  Ice.cpp			\
 			  Cure.cpp			\
 			  Character.cpp		\
+			  MateriaSource.cpp	\
 			  main.cpp			\
 
 OBJS		= $(SRCS:.cpp=.o)
