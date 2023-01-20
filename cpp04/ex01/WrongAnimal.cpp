@@ -21,3 +21,9 @@ void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "Random animal sound..." << std::endl;
 }
+
+WrongAnimal&	WrongAnimal::operator=(WrongAnimal const & rhs)
+{
+	this->type = rhs.type;
+	return (*this);
+}

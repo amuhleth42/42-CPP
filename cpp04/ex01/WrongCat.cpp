@@ -18,3 +18,9 @@ void	WrongCat::makeSound(void) const
 {
 	std::cout << "WrongCat: Meooowwwwww" << std::endl;
 }
+
+WrongCat&	WrongCat::operator=(WrongCat const & rhs)
+{
+	WrongAnimal::operator=(rhs);
+	return (*this);
+}
