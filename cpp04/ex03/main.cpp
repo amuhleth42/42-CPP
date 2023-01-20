@@ -23,5 +23,28 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+
+	/*MateriaSource*	s = new MateriaSource();
+	s->learnMateria(new Cure());
+	s->learnMateria(new Ice());
+	s->learnMateria(new Cure());
+	Character*	p1 = new Character("yo");
+	p1->equip(s->createMateria("cure"));
+
+	Character*	p2 = new Character("hey");
+	p2->equip(s->createMateria("ice"));
+	p2->equip(s->createMateria("ice"));
+	p2->equip(s->createMateria("ice"));
+	*p1 = *p2;
+
+	p1->use(0, *p2);
+	p1->use(1, *p2);
+	p1->use(2, *p2);
+	p1->use(3, *p2);
+
+	delete s;
+	delete p1;
+	delete p2;*/
+
 	return 0;
 }

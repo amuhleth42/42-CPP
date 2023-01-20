@@ -5,9 +5,15 @@ Cure::Cure(void) : AMateria("cure")
 	//std::cout << "Cure default constructor" << std::endl;
 }
 
-Cure::Cure(std::string const & type) : AMateria(type)
+Cure::Cure(Cure const & src)
 {
 	//std::cout << "Cure copy constructor" << std::endl;
+	*this = src;
+}
+
+Cure::Cure(std::string const & type) : AMateria(type)
+{
+	//std::cout << "Cure string constructor" << std::endl;
 }
 
 Cure::~Cure(void)
@@ -28,5 +34,6 @@ void	Cure::use(ICharacter& target)
 Cure&	Cure::operator=(Cure const & rhs)
 {
 	AMateria::operator=(rhs);
+	this->type = rhs.type;
 	return (*this);
 }

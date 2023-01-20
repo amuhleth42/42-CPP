@@ -5,9 +5,15 @@ Ice::Ice(void) : AMateria("ice")
 	//std::cout << "Ice defaut constructor" << std::endl;
 }
 
-Ice::Ice(std::string const & type) : AMateria(type)
+Ice::Ice(Ice const & src)
 {
 	//std::cout << "Ice copy constructor" << std::endl;
+	*this = src;
+}
+
+Ice::Ice(std::string const & type) : AMateria(type)
+{
+	//std::cout << "Ice string constructor" << std::endl;
 }
 
 Ice::~Ice(void)
@@ -17,8 +23,7 @@ Ice::~Ice(void)
 
 Ice*	Ice::clone(void) const
 {
-	Ice* n = new Ice();
-	return (n);
+	return (new Ice());
 }
 
 void	Ice::use(ICharacter& target)
@@ -29,5 +34,6 @@ void	Ice::use(ICharacter& target)
 Ice&	Ice::operator=(Ice const & rhs)
 {
 	AMateria::operator=(rhs);
+	this->type = rhs.type;
 	return (*this);
 }

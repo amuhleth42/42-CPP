@@ -10,6 +10,12 @@ AMateria::AMateria(std::string const & type) : type(type)
 	//std::cout << "AMateria string constructor" << std::endl;
 }
 
+AMateria::AMateria(AMateria const & src)
+{
+	//std::cout << "AMateria copy constructor" << std::endl;
+	*this = src;
+}
+
 AMateria::~AMateria(void)
 {
 	//std::cout << "AMateria destructor" << std::endl;
