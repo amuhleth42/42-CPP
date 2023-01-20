@@ -2,17 +2,17 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-	std::cout << "Ice defaut constructor" << std::endl;
+	//std::cout << "Ice defaut constructor" << std::endl;
 }
 
 Ice::Ice(std::string const & type) : AMateria(type)
 {
-	std::cout << "Ice copy constructor" << std::endl;
+	//std::cout << "Ice copy constructor" << std::endl;
 }
 
 Ice::~Ice(void)
 {
-	std::cout << "Ice destructor" << std::endl;
+	//std::cout << "Ice destructor" << std::endl;
 }
 
 Ice*	Ice::clone(void) const

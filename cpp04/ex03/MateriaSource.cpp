@@ -11,7 +11,7 @@ MateriaSource::~MateriaSource(void)
 	{
 		if (this->_tab[i] != NULL)
 		{
-			std::cout << "p: " << this->_tab[i] << std::endl;
+			//std::cout << "p: " << this->_tab[i] << std::endl;
 			delete this->_tab[i];
 		}
 	}

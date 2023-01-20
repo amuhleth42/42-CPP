@@ -2,17 +2,17 @@
 
 Character::Character(void)
 {
-	std::cout << "Character default constructor" << std::endl;
+	//std::cout << "Character default constructor" << std::endl;
 }
 
 Character::Character(std::string const & name) : _name(name)
 {
-	std::cout << "Character copy constructor" << std::endl;
+	//std::cout << "Character copy constructor" << std::endl;
 }
 
 Character::~Character(void)
 {
-	std::cout << "Character destructor" << std::endl;
+	//std::cout << "Character destructor" << std::endl;
 }
 
 std::string const &	Character::getName(void) const
