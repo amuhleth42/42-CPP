@@ -20,6 +20,7 @@ int	main(void)
 
 	std::cout << std::endl;
 
+	a.whoAmI();
 	c.whoAmI();
 	c.attack("Stupeflip");
 
