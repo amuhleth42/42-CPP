@@ -3,11 +3,13 @@
 
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
 
 class	Form {
 
 public:
 	Form(void);
+	Form(std::string name, bool s, int gts, int gtx);
 	Form(Form const & src);
 	~Form(void);
 
@@ -16,13 +18,14 @@ public:
 	int			getGradeToSign(void) const;
 	int			getGradeToExecute(void) const;
 
+	void	beSigned(Bureaucrat const & b);
+
 	class	GradeTooHighException : public std::exception {
 		virtual const char* what(void) const throw();
 	};
 	class	GradeTooLowException : public std::exception {
 		virtual const char* what(void) const throw();
 	};
-
 
 	Form&	operator=(Form const & rhs);
 

@@ -17,6 +17,7 @@ public:
 
 	void	incrementGrade(void);
 	void	decrementGrade(void);
+	void	signForm(std::string form) const;
 
 	class	GradeTooHighException : public std::exception {
 		virtual const char*	what() const throw();
