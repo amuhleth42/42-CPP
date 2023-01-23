@@ -10,16 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= polymorphisme
+NAME		= bureaucrat
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS		= main.cpp			\
-			  Animal.cpp		\
-			  Cat.cpp			\
-			  Dog.cpp			\
-			  WrongAnimal.cpp	\
-			  WrongCat.cpp		\
+SRCS		= Bureaucrat.cpp	\
+			  main.cpp			\
 
 OBJS		= $(SRCS:.cpp=.o)
 
