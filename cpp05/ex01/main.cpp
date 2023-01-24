@@ -7,11 +7,13 @@ int	main(void)
 	{
 		Bureaucrat	a("Damien", 22);
 		Bureaucrat	b("Jacques", 122);
-		Form		f = Form("42's Admission", false, 50, 30);
+		Form		f = Form("42's Admission", 50, 30);
 		std::cout << f << std::endl;
 
-		f.beSigned(a);
-		f.beSigned(b);
+		b.signForm(f);
+		a.signForm(f);
+		b.signForm(f);
+
 	}
 	catch (std::exception& e)
 	{
