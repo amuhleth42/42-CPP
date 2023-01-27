@@ -5,8 +5,9 @@ Base::~Base(void) {};
 Base*	generate(void)
 {
 	int	n;
+	static int call;
 
-	srand(time(NULL));
+	srand(time(NULL) + call++);
 	n = rand() % 3;
 	switch (n)
 	{
@@ -68,12 +69,15 @@ int	main(void)
 {
 	Base*	ptr = generate();
 	identify(ptr);
+	identify(*ptr);
 	delete ptr;
 	ptr = generate();
 	identify(ptr);
+	identify(*ptr);
 	delete ptr;
 	ptr = generate();
 	identify(ptr);
+	identify(*ptr);
 	delete ptr;
 	return (0);
 }
