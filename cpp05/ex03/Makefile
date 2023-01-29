@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= forms
+NAME		= intern
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
@@ -20,6 +20,7 @@ SRCS		= Bureaucrat.cpp				\
 			  RobotomyRequestForm.cpp		\
 			  ShrubberyCreationForm.cpp		\
 			  PresidentialPardonForm.cpp	\
+			  Intern.cpp					\
 
 OBJS		= $(SRCS:.cpp=.o)
 
