@@ -17,6 +17,7 @@ int	main(void)
 	}
 	catch (std::exception& e)
 	{
+		std::cout << "yoo" << std::endl;
 		std::cout << e.what() << std::endl;
 	}
 
