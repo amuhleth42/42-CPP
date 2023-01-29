@@ -68,6 +68,7 @@ void	Bureaucrat::executeForm(Form const & form)
 	try
 	{
 		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch (Form::NotYetSignedException& e)
 	{

@@ -26,7 +26,36 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	if (executor.getGrade() <= this->getGradeToExecute())
 	{
-		// TODO
+		std::ofstream	file(this->_target + "_shrubbery");
+
+		file << "                                                       ." << std::endl
+			<< "                                              .         ;" << std::endl
+			<< "                 .              .              ;%     ;;" << std::endl
+			<< "                   ,           ,                :;%  %;" << std::endl
+			<< "                    :         ;                   :;%;'     .," << std::endl
+			<< "           ,.        %;     %;            ;        %;'    ,;" << std::endl
+			<< "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl
+			<< "              %;       %;%;      ,  ;       %;  ;%;   ,%;'" << std::endl
+			<< "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl
+			<< "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl
+			<< "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl
+			<< "                    `:%;.  :;bd%;          %;@%;'" << std::endl
+			<< "                      `@%:.  :;%.         ;@@%;'" << std::endl
+			<< "                        `@%.  `;@%.      ;@@%;" << std::endl
+			<< "                          `@%%. `@%%    ;@@%;" << std::endl
+			<< "                            ;@%. :@%%  %@@%;" << std::endl
+			<< "                              %@bd%%%bd%%:;" << std::endl
+			<< "                                #@%%%%%:;;" << std::endl
+			<< "                                %@@%%%::;" << std::endl
+			<< "                                %@@@%(o);  . '" << std::endl
+			<< "                                %@@@o%;:(.,'" << std::endl
+			<< "                            `.. %@@@o%::;" << std::endl
+			<< "                               `)@@@o%::;" << std::endl
+			<< "                                %@@(o)::;" << std::endl
+			<< "                               .%@@@@%::;" << std::endl
+			<< "                               ;%@@@@%::;." << std::endl
+			<< "                              ;%@@@@%%:;;;." << std::endl
+			<< "                          ...;%@@@@@%%:;;;;,.." << std::endl;
 	}
 	else
 		throw Form::GradeTooLowException();
