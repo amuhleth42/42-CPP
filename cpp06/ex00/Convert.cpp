@@ -18,11 +18,41 @@ void	Convert::detectType(char* str)
 	std::string	s(str);
 
 	if (s.compare("nan") == 0 || s.compare("nanf") == 0)
-		this->setValues(NAN);
+		this->setNan();
 	if (s.compare("-inf") == 0 || s.compare("-inff") == 0)
-		this->setValues(INFINITY);
+		this->setNegInf();
+	if (s.compare("inf") == 0 || s.compare("inff") == 0)
+		this->setInf();
+	if (s.length() == 3 && s[0] == '\'' && s[2] == '\'')
+		this->setValues(s[1]);
+	if (isInt(s))
+		this->setValues(stoi(s));
+	else if (isFloat(s))
+		this->setValues(strtof(s.c_str(), NULL));
+	else if (isDouble(s))
+		this->setValues(strtod(s.c_str(), NULL));
 }
 
+void	Convert::setNan(void)
+{
+	this->_impossible = true;
+	this->_f = NAN;
+	this->_d = NAN;
+}
+
+void	Convert::setInf(void)
+{
+	this->_impossible = true;
+	this->_f = INFINITY;
+	this->_d = INFINITY;
+}
+
+void	Convert::setNegInf(void)
+{
+	this->_impossible = true;
+	this->_f = INFINITY * -1;
+	this->_d = INFINITY * -1;
+}
 
 void	Convert::setValues(char data)
 {
@@ -58,12 +88,23 @@ void	Convert::setValues(double data)
 
 void	Convert::printChar(void)
 {
-	std::cout << "char: " << std::endl;
+	if (this->_impossible)
+		std::cout << "char: impossible" << std::endl;
+	else
+	{
+		if (isprint(this->_c))
+			std::cout << "char: '" << this->_c << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
 }
 
 void	Convert::printInt(void)
 {
-	std::cout << "int: " << this->_i << std::endl;
+	if (this->_impossible)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_i << std::endl;
 }
 
 void	Convert::printFloat(void)
