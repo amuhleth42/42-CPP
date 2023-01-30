@@ -1,19 +1,19 @@
-#include "Convert.hpp"
+#include "ScalarConverter.hpp"
 
-Convert::Convert(void)
+ScalarConverter::ScalarConverter(void)
 {
 }
 
-Convert::Convert(Convert const & src)
+ScalarConverter::ScalarConverter(ScalarConverter const & src)
 {
 	*this = src;
 }
 
-Convert::~Convert(void)
+ScalarConverter::~ScalarConverter(void)
 {
 }
 
-void	Convert::detectType(char* str)
+void	ScalarConverter::detectType(char* str)
 {
 	std::string	s(str);
 
@@ -33,28 +33,28 @@ void	Convert::detectType(char* str)
 		this->setValues(strtod(s.c_str(), NULL));
 }
 
-void	Convert::setNan(void)
+void	ScalarConverter::setNan(void)
 {
 	this->_impossible = true;
 	this->_f = NAN;
 	this->_d = NAN;
 }
 
-void	Convert::setInf(void)
+void	ScalarConverter::setInf(void)
 {
 	this->_impossible = true;
 	this->_f = INFINITY;
 	this->_d = INFINITY;
 }
 
-void	Convert::setNegInf(void)
+void	ScalarConverter::setNegInf(void)
 {
 	this->_impossible = true;
 	this->_f = INFINITY * -1;
 	this->_d = INFINITY * -1;
 }
 
-void	Convert::setValues(char data)
+void	ScalarConverter::setValues(char data)
 {
 	this->_c = static_cast<char>(data);
 	this->_i = static_cast<int>(data);
@@ -62,7 +62,7 @@ void	Convert::setValues(char data)
 	this->_d = static_cast<double>(data);
 }
 
-void	Convert::setValues(int data)
+void	ScalarConverter::setValues(int data)
 {
 	this->_c = static_cast<char>(data);
 	this->_i = static_cast<int>(data);
@@ -70,7 +70,7 @@ void	Convert::setValues(int data)
 	this->_d = static_cast<double>(data);
 }
 
-void	Convert::setValues(float data)
+void	ScalarConverter::setValues(float data)
 {
 	this->_c = static_cast<char>(data);
 	this->_i = static_cast<int>(data);
@@ -78,7 +78,7 @@ void	Convert::setValues(float data)
 	this->_d = static_cast<double>(data);
 }
 
-void	Convert::setValues(double data)
+void	ScalarConverter::setValues(double data)
 {
 	this->_c = static_cast<char>(data);
 	this->_i = static_cast<int>(data);
@@ -86,7 +86,7 @@ void	Convert::setValues(double data)
 	this->_d = static_cast<double>(data);
 }
 
-void	Convert::printChar(void)
+void	ScalarConverter::printChar(void)
 {
 	if (this->_impossible)
 		std::cout << "char: impossible" << std::endl;
@@ -99,7 +99,7 @@ void	Convert::printChar(void)
 	}
 }
 
-void	Convert::printInt(void)
+void	ScalarConverter::printInt(void)
 {
 	if (this->_impossible)
 		std::cout << "int: impossible" << std::endl;
@@ -107,17 +107,17 @@ void	Convert::printInt(void)
 		std::cout << "int: " << this->_i << std::endl;
 }
 
-void	Convert::printFloat(void)
+void	ScalarConverter::printFloat(void)
 {
 	std::cout << "float: " << this->_f << std::endl;
 }
 
-void	Convert::printDouble(void)
+void	ScalarConverter::printDouble(void)
 {
 	std::cout << "double: " << this->_d << std::endl;
 }
 
-Convert&	Convert::operator=(Convert const & rhs)
+ScalarConverter&	ScalarConverter::operator=(ScalarConverter const & rhs)
 {
 	this->_c = rhs._c;
 	this->_i = rhs._i;

@@ -1,15 +1,15 @@
-#ifndef CONVERT_HPP
-# define CONVERT_HPP
+#ifndef SCALAR_CONVERTER_HPP
+# define SCALAR_CONVERTER_HPP
 
 # include <iostream>
 # include <string>
 
-class	Convert {
+class	ScalarConverter {
 
 public:
-	Convert(void);
-	Convert(Convert const & src);
-	~Convert(void);
+	ScalarConverter(void);
+	ScalarConverter(Convert const & src);
+	~ScalarConverter(void);
 
 
 	void	detectType(char *str);
@@ -26,7 +26,7 @@ public:
 	void	printFloat(void);
 	void	printDouble(void);
 
-	Convert&	operator=(Convert const & rhs);
+	ScalarConverter&	operator=(Convert const & rhs);
 
 private:
 

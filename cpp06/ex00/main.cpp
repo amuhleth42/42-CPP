@@ -50,12 +50,9 @@ int	main(int argc, char **argv)
 		std::cout << "Usage: " << argv[0] << " <literal>" << std::endl;
 		return (1);
 	}
-	Convert	c;
+	ScalarConverter	c;
 
-	c.detectType(argv[1]);
-	c.printChar();
-	c.printInt();
-	c.printFloat();
-	c.printDouble();
+	c.convert(argv[1]);
+
 	return (0);
 }
