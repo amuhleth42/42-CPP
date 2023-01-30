@@ -1,4 +1,4 @@
-#include "Convert.hpp"
+#include "ScalarConverter.hpp"
 
 bool	isInt(std::string const & s)
 {

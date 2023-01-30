@@ -14,10 +14,10 @@ NAME		= convert
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-#SRCS		= main.cpp			\
-			  Convert.cpp		\
+SRCS		= main.cpp					\
+			  ScalarConverter.cpp		\
 
-SRCS		= k.cpp			\
+#SRCS		= k.cpp			\
 			  kevin.cpp		\
 
 OBJS		= $(SRCS:.cpp=.o)
