@@ -59,6 +59,7 @@ private:
 
 	e_type	_type;
 	bool	_charImpossible;
+	bool	_intImpossible;
 
 
 };

@@ -60,8 +60,6 @@ e_type	ScalarConverter::detectType(void)
 
 void	ScalarConverter::castChar(void)
 {
-	bool	impossible = false;
-
 	switch (_type)
 	{
 		case IS_CHAR:
@@ -69,26 +67,26 @@ void	ScalarConverter::castChar(void)
 			break;
 		case IS_INT:
 			if (_int > 255 || _int < 0)
-				impossible = true;
+				_charImpossible = true;
 			else
 				_char = static_cast<char>(_int);
 			break;
 		case IS_FLOAT:
 			if (_float> 255 || _float< 0)
-				impossible = true;
+				_charImpossible = true;
 			else
 				_char = static_cast<char>(_float);
 			break;
 		case IS_DOUBLE:
 			if (_double> 255 || _double< 0)
-				impossible = true;
+				_charImpossible = true;
 			else
 				_char = static_cast<char>(_double);
 			break;
 		default:
-			impossible = true;
+			_charImpossible = true;
 	}
-	if (impossible || _charImpossible)
+	if (_charImpossible)
 		std::cout << "char: impossible" << std::endl;
 	else if (!isprint(_char))
 		std::cout << "char: Non displayable" << std::endl;
@@ -98,8 +96,6 @@ void	ScalarConverter::castChar(void)
 
 void	ScalarConverter::castInt(void)
 {
-	bool	impossible = false;
-
 	switch (_type)
 	{
 		case IS_CHAR:
@@ -110,7 +106,7 @@ void	ScalarConverter::castInt(void)
 			double	res = strtod(_s.c_str(), NULL);
 			if (std::numeric_limits<int>::max() < res || res < std::numeric_limits<int>::min())
 			{
-				impossible = true;
+				_intImpossible = true;
 				_charImpossible = true;
 			}
 			else
@@ -120,7 +116,7 @@ void	ScalarConverter::castInt(void)
 		case IS_FLOAT:
 		{
 			if (std::numeric_limits<int>::max() < _float || _float < std::numeric_limits<int>::min())
-				impossible = true;
+				_intImpossible = true;
 			else
 				_int = static_cast<int>(_float);
 			break;
@@ -128,15 +124,15 @@ void	ScalarConverter::castInt(void)
 		case IS_DOUBLE:
 		{
 			if (std::numeric_limits<int>::max() < _double|| _double< std::numeric_limits<int>::min())
-				impossible = true;
+				_intImpossible = true;
 			else
 				_int = static_cast<int>(_double);
 			break;
 		}
 		default:
-			impossible = true;
+			_intImpossible = true;
 	}
-	if (impossible)
+	if (_intImpossible)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << _int << std::endl;
@@ -184,7 +180,7 @@ void	ScalarConverter::castFloat(void)
 		std::cout << "float: +inff" << std::endl;
 	else if (_type == IS_NEG_INF)
 		std::cout << "float: -inff" << std::endl;
-	else if (impossible)
+	else if (impossible || _intImpossible)
 		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << "float: " << std::setprecision(1) << std::fixed << _float << 'f' << std::endl;
@@ -220,7 +216,7 @@ void	ScalarConverter::castDouble(void)
 		std::cout << "double: +inf" << std::endl;
 	else if (_type == IS_NEG_INF)
 		std::cout << "double: -inf" << std::endl;
-	else if (impossible)
+	else if (impossible || _intImpossible)
 		std::cout << "double: impossible" << std::endl;
 	else
 		std::cout << "double: " << std::setprecision(1) << std::fixed << _double << std::endl;
