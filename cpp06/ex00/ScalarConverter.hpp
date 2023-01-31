@@ -51,13 +51,13 @@ private:
 
 	std::string	_s;
 
-	char	_c;
-	int		_i;
-	float	_f;
-	double	_d;
+	char	_char;
+	int		_int;
+	float	_float;
+	double	_double;
 
 	e_type	_type;
-	bool	_impossible;
+	bool	_charImpossible;
 
 
 };
