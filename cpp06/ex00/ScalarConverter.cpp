@@ -123,6 +123,7 @@ void	ScalarConverter::castInt(void)
 				impossible = true;
 			else
 				_int = static_cast<int>(_float);
+			break;
 		}
 		case IS_DOUBLE:
 		{
@@ -130,6 +131,7 @@ void	ScalarConverter::castInt(void)
 				impossible = true;
 			else
 				_int = static_cast<int>(_double);
+			break;
 		}
 		default:
 			impossible = true;
@@ -142,17 +144,86 @@ void	ScalarConverter::castInt(void)
 
 void	ScalarConverter::castFloat(void)
 {
+	bool	impossible = false;
+
 	switch (_type)
 	{
 		case IS_CHAR:
 			_float = static_cast<float>(_char);
+			break;
+		case IS_INT:
+			_float = static_cast<float>(_int);
+			break;
+		case IS_FLOAT:
+		{
+			double	res = strtod(_s.c_str(), NULL);
+			if (res < std::numeric_limits<float>::min() || std::numeric_limits<float>::max() < res)
+				impossible = true;
+			else
+				_float = static_cast<float>(res);
+			break;
+		}
+		case IS_DOUBLE:
+		{
+			if (_double < std::numeric_limits<float>::min()
+				|| std::numeric_limits<float>::max() < _double)
+				impossible = true;
+			else
+				_float = static_cast<float>(_double);
+			break;
+		}
 		default:
-			_float = 12;
+		{
+			impossible = true;
+			_charImpossible = true;
+		}
 	}
+	if (_type == IS_NAN)
+		std::cout << "float: nanf" << std::endl;
+	else if (_type == IS_POS_INF)
+		std::cout << "float: +inff" << std::endl;
+	else if (_type == IS_NEG_INF)
+		std::cout << "float: -inff" << std::endl;
+	else if (impossible)
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << std::setprecision(1) << std::fixed << _float << 'f' << std::endl;
 }
 
 void	ScalarConverter::castDouble(void)
 {
+	bool	impossible = false;
+
+	switch (_type)
+	{
+		case IS_CHAR:
+			_double = static_cast<double>(_char);
+			break;
+		case IS_INT:
+			_double = static_cast<double>(_int);
+			break;
+		case IS_FLOAT:
+			_double = static_cast<double>(_float);
+			break;
+		case IS_DOUBLE:
+			_double = strtod(_s.c_str(), NULL);
+			break;
+		default:
+		{
+			impossible = true;
+			_charImpossible = true;
+		}
+	}
+	if (_type == IS_NAN)
+		std::cout << "double: nan" << std::endl;
+	else if (_type == IS_POS_INF)
+		std::cout << "double: +inf" << std::endl;
+	else if (_type == IS_NEG_INF)
+		std::cout << "double: -inf" << std::endl;
+	else if (impossible)
+		std::cout << "double: impossible" << std::endl;
+	else
+		std::cout << "double: " << std::setprecision(1) << std::fixed << _double << std::endl;
 }
 
 ScalarConverter&	ScalarConverter::operator=(ScalarConverter const & rhs)
