@@ -14,6 +14,7 @@ public:
 	unsigned int	size(void);
 
 	Array<T>&	operator=(Array<T> const & rhs);
+	T&			operator[](int i);
 
 private:
 
