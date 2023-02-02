@@ -63,7 +63,7 @@ void	ScalarConverter::castChar(void)
 	switch (_type)
 	{
 		case IS_CHAR:
-			_char = _s[0];
+			_char = _s[1];
 			break;
 		case IS_INT:
 			if (_int > 255 || _int < 0)
