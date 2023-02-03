@@ -1,8 +1,11 @@
 #ifndef MUTANT_STACK_HPP
 # define MUTANT_STACK_HPP
 
+# include <stack>
+# include <iostream>
+
 template <typename T>
-class	MutantStack : std::stack<T> {
+class	MutantStack : public std::stack<T> {
 
 public:
 
