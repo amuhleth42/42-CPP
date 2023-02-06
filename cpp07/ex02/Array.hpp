@@ -15,6 +15,7 @@ public:
 
 	Array<T>&	operator=(Array<T> const & rhs);
 	T&			operator[](int i);
+	T const&	operator[](int i) const;
 
 private:
 

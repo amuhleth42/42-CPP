@@ -53,4 +53,12 @@ T&	Array<T>::operator[](int i)
 	return (this->_data[i]);
 }
 
+template <typename T>
+T const&	Array<T>::operator[](int i) const
+{
+	if (i < 0 || static_cast<int>(this->_size) <= i)
+		throw std::exception();
+	return (this->_data[i]);
+}
+
 #endif
