@@ -12,6 +12,8 @@ public:
 	Span(Span const & src);
 	~Span(void);
 
+	size_t	size(void) const;
+
 	void	addNumber(int n);
 	void	insert(std::vector<int>::iterator first, std::vector<int>::iterator last);
 
