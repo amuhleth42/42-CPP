@@ -11,7 +11,8 @@ class	PmergeMe {
 
 public:
 
-	PmergeMe(std::vector<int> & v);
+	//PmergeMe(std::vector<int> & v);
+	PmergeMe(int argc, char **argv);
 	virtual	~PmergeMe(void);
 
 	void	printVector(std::vector<int> & v);

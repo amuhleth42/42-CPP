@@ -2,18 +2,25 @@
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	//std::stringstream	input;
+	//int					num;
 
-	std::vector<int>	v1;
+	/*for (int i = 1 ; i < argc ; i++)
+	{
+		std::stringstream	input;
+		int	num;
+		input << argv[i];
+		input >> num;
+		v.push_back(num);
+	}
+	*/
+	if (argc < 2)
+	{
+		std::cout << "Usage: " << argv[0] << " <n1> <n2> <n3> ..." << std::endl;
+		return 0;
+	}
 
-	v1.push_back(5);
-	v1.push_back(4);
-	v1.push_back(3);
-	v1.push_back(2);
-	v1.push_back(1);
-
-	PmergeMe	test(v1);
+	PmergeMe	test(argc, argv);
 
 	std::cout << "vector: ";
 	test.printVector(test.getV());

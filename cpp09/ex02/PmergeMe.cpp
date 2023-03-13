@@ -1,9 +1,23 @@
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(std::vector<int> & v) : _v(v)
+PmergeMe::PmergeMe(int argc, char **argv)
+{
+	for (int i = 1 ; i < argc ; i++)
+	{
+		std::stringstream	input;
+		int					n;
+
+		input << argv[i];
+		input >> n;
+		_v.push_back(n);
+		_l.push_back(n);
+	}
+}
+
+/*PmergeMe::PmergeMe(std::vector<int> & v) : _v(v)
 {
 	_l = std::list<int>(v.begin(), v.end());
-}
+}*/
 
 PmergeMe::~PmergeMe(void)
 {
