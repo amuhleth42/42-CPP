@@ -13,6 +13,8 @@ public:
 	RPN(std::string	input);
 	virtual	~RPN(void);
 
+	bool	is_operand(std::string const & token);
+	bool	is_operator(std::string const & token);
 
 
 private:
