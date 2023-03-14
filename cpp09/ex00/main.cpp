@@ -4,10 +4,11 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Usage: " << argv[0] << " <input file>" << std::endl;
+		std::cout << "Error: could not open file." << std::endl;
 		return (0);
 	}
 	BitcoinExchange	btc(argv[1]);
-
+	if (btc.getError())
+		std::cout << "Error: could not open file." << std::endl;
 	return (0);
 }
